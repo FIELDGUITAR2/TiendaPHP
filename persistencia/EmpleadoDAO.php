@@ -40,5 +40,9 @@
             Empleado em 
             INNER JOIN Persona p on em.ID_Persona = p.ID_Persona;";
         }
+        public function InsertarEmpleado()
+        {
+            return"insert into Empleado(ID_Persona,Clave_Empleado) values (".$this->id.",md5('".$this->clave."'));";
+        }
     }
 ?>

@@ -11,7 +11,8 @@ $paginas_sin_autenticacion = [
 
 $paginas_con_autenticacion = [
     "presentacion/MenuEmpleado.php",
-    "presentacion/MenuAdmin.php"
+    "presentacion/MenuAdmin.php",
+    "presentacion/Admin/AgregarEditarEmpleado.php"
 ];
 ?>
 <!DOCTYPE html>

@@ -1,4 +1,6 @@
 <?php
+    require_once("persistencia/Conexion.php");
+    require_once("persistencia/PersonaDAO.php");
     class Persona 
     {
         protected $id;
@@ -78,6 +80,13 @@
             $this->direccion = $direccion;
         }
 
+        public function InsertarPersona()
+        {
+            $conexion = new Conexion();
+            $personaDAO = new PersonaDAO($this->getId(),$this->getNombre(), $this->getIdId(), $this->getCorreo(), $this->getTelefono(), $this->getDireccion());
+            $conexion->ejecutar($personaDAO->InsertarPersona());
+            $conexion->cerrar();
+        }
         
     }
 ?>

@@ -7,7 +7,7 @@ class Empleado extends Persona
     private $idEmpleado;
     private $clave;
 
-    public function _construct(
+    public function __construct(
         $idEmpleado = "", 
         $clave = "", 
         $id = "", 
@@ -66,19 +66,28 @@ class Empleado extends Persona
         $empleados = [];
         while (($datos = $conexion->registro()) != null) {
             $empleado = new Empleado(
-                $datos[0],
-                $datos[2],
-                "",
-                $datos[3],
-                $datos[4],
-                $datos[5],
+            $datos[1],
+            "",
+            $datos[0],
+            $datos[2],
+            "",
+            $datos[3],
+            $datos[4],
+            $datos[5]
             );
-            $empleado->setIdEmpleado($datos[1]);
             array_push($empleados,$empleado);
         }
         $conexion->cerrar();
         return $empleados;
-
+    }
+    public function InsertarEmpleado()
+    {
+        $conexion = new Conexion();
+        $persona = new Persona($this->id,$this->nombre,$this->idId,$this->correo,$this->telefono,$this->direccion);
+        $persona->InsertarPersona();
+        $empleadoDAO = new EmpleadoDAO($this->id,$this->clave);
+        $conexion->ejecutar($empleadoDAO->InsertarEmpleado());
+        $conexion->cerrar();
     }
 }
 
