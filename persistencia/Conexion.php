@@ -7,7 +7,14 @@ class Conexion
 
     public function abrir()
     {
-        $this->conexion = new mysqli("localhost", "root", "", "Tienda");
+        if ($_SERVER['REMOTE_ADDR'] == "::1") {
+            // Conexión local desde XAMPP (puerto 3310)
+            // $this->conexion = new mysqli("127.0.0.1", "root", "", "copatoon");
+            $this->conexion = new mysqli("localhost", "root", "", "chazamm", 3306);
+        } else {
+            // Conexión en servidor remoto
+            $this->conexion = new mysqli("sql308.infinityfree.co", "if0_40691343", "SNKoTqCDlq", "f0_40691343_chazamm");
+        }
     }
 
     public function cerrar()
