@@ -17,7 +17,7 @@ require ("logica/EstadoCita.php");
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Altair Air</title>
+<title>Chazamm</title>
 
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -40,6 +40,15 @@ require ("logica/EstadoCita.php");
     height: 420px;
     object-fit: cover;
   }
+  body {
+      background-color: #f8f9fa;
+    }
+    .hero {
+      background: linear-gradient(135deg, #ff4d6d, #ff9f1c);
+      color: white;
+      padding: 80px 20px;
+      border-radius: 0 0 40px 40px;
+    }
 </style>
 
 </head>
